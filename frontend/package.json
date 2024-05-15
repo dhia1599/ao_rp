@@ -55,6 +55,7 @@
   },
   "devDependencies": {
     "@jihyunlab/eslint-config": "^1.0.6",
-    "@jihyunlab/prettier-config": "^1.0.3"
+    "@jihyunlab/prettier-config": "^1.0.3",
+    "tailwindcss": "^3.4.3"
   }
 }
