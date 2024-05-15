@@ -1,3 +1,24 @@
-# @jihyunlab/login
-JihyunLab Login frontend(React) and backend(NestJS).
-JihyunLab Login was created for training by React and NestJS.
+# AO APP BACK
+
+Welcome to AO APP! This is a Nest js project.
+
+## To launch the app
+
+To launch the app, move to the directory frontend or backend:
+
+```bash
+cd frontend 
+```
+or 
+```bash
+cd backend
+```
+
+and start it
+```bash
+npm start
+```
+or
+```bash
+yarn start
+```

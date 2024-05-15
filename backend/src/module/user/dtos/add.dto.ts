@@ -10,7 +10,7 @@ export class UserAddReqDto {
   @ApiProperty({ type: String, required: true, example: 'Jihyun' })
   name: string;
 
-  @ApiProperty({ type: String, isArray: true, required: true, example: ['Admin'] })
+  @ApiProperty({ type: String, isArray: true, required: false, example: ['Admin'] })
   role: string[];
 }
 
