@@ -7,8 +7,8 @@ async function bootstrap() {
 
   if (process.env.NODE_ENV === 'development') {
     const config = new DocumentBuilder()
-      .setTitle('JihyunLab Login')
-      .setDescription('JihyunLab Login API description')
+      .setTitle('Backend')
+      .setDescription('API description')
       .setVersion('1.0')
       .addBearerAuth(
         { type: 'http', bearerFormat: 'JWT', description: 'Access token(access-token) generated from sign in' },
