@@ -14,10 +14,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className="border-b border-gray-200"
+      className="sticky top-0 w-full"
       style={{ background: 'linear-gradient(to right, #6bb5ce, #5e87c6, #493488)' }}
     >
-      <div className="max-w-7xl sm:px-3">
+      <div className="sm:px-3 w-full">
         <div className="relative flex items-center justify-between h-16">
           <div className="flex items-center">
             <img className="h-12 w-auto" src={logo} alt="Logo" />
