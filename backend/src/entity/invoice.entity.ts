@@ -15,7 +15,4 @@ export class Invoice {
 
   @ManyToOne(() => Client)
   client: Client;
-
-  @OneToMany(() => Product, product => product.invoice)
-  contained: Product[];
 }

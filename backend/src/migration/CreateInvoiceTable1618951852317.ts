@@ -5,13 +5,13 @@ export class CreateInvoiceTable1618951852317 implements MigrationInterface {
 
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.query(`
-      CREATE TABLE "invoice" (
-        "id" SERIAL NOT NULL,
-        "price" integer NOT NULL,
-        "contact" character varying NOT NULL,
-        "clientId" integer,
-        CONSTRAINT "pk_invoice" PRIMARY KEY ("id")
-      )
+    CREATE TABLE "invoice" (
+      "id" SERIAL NOT NULL,
+      "price" integer NOT NULL,
+      "contact" character varying NOT NULL,
+      "clientId" integer,
+      CONSTRAINT "pk_invoice" PRIMARY KEY ("id")
+    )
     `);
     await queryRunner.query(`
       ALTER TABLE "invoice" ADD CONSTRAINT "fk_invoice" FOREIGN KEY ("clientId") REFERENCES "client"("id") ON DELETE NO ACTION ON UPDATE NO ACTION

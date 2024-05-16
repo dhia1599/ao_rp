@@ -12,6 +12,6 @@ export class Product {
   @Column()
   price: number;
 
-  @ManyToOne(() => Invoice, invoice => invoice.contained)
+  @ManyToOne(() => Invoice)
   invoice: Invoice;
 }
