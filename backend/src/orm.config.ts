@@ -5,9 +5,6 @@ import { User } from './entity/user.entity';
 import { Client } from './entity/client.entity';
 import { Invoice } from './entity/invoice.entity';
 import { Product } from './entity/product.entity';
-import { Client } from './entity/client.entity';
-import { Invoice } from './entity/invoice.entity';
-import { Product } from './entity/product.entity';
 
 dotenv.config();
 
@@ -19,10 +16,6 @@ const OrmDataSourceOptions: DataSourceOptions = {
   username: process.env.DATABASE_USER,
   password: process.env.DATABASE_PASSWORD,
   synchronize: false,
-  entities: [User, Client, Invoice, Product],
-  migrations: ["dist/migrations/*{.ts,.js}"],
-  logging: false,
-  name: 'default'
   entities: [User, Client, Invoice, Product],
   migrations: ["dist/migrations/*{.ts,.js}"],
   logging: false,

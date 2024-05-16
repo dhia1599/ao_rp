@@ -1,7 +1,6 @@
-import { Controller, Get, Post, Put, Delete, Body, Param, HttpStatus, NotFoundException, Req, Res } from '@nestjs/common';
+import { Controller, Get, Post, Delete, Body, Param, HttpStatus, NotFoundException, Res } from '@nestjs/common';
 import { ClientService } from '../services/client.service';
 import { Client } from 'src/entity/client.entity';
-import { ApiResponse } from '@nestjs/swagger';
 
 @Controller('clients')
 export class ClientController {
