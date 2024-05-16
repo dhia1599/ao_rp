@@ -1,9 +1,0 @@
-{
-  "login": "Login",
-  "email": "Email",
-  "password": "Password",
-  "enterEmail": "Please enter your email.",
-  "enterPassword": "Please enter your password.",
-  "enterEmailAndPassword": "Please enter your email and password.",
-  "loginFailed": "Login failed."
-}
