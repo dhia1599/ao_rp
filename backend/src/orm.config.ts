@@ -1,4 +1,5 @@
-import { DataSource, DataSourceOptions } from 'typeorm';
+import { DataSource, DataSourceOptions, getConnection } from 'typeorm';
+import { DataSource, DataSourceOptions, getConnection } from 'typeorm';
 import * as dotenv from 'dotenv';
 import { User } from './entity/user.entity';
 import { Client } from './entity/client.entity';
