@@ -25,7 +25,7 @@ export class ClientService {
     }
   }
 
-  async create(clientData: Partial<Client>): Promise<Client> {
+  async create(clientData: Partial<Client>): Promise<boolean> {
     try {
       const queryBuilder = this.dataSource.createQueryBuilder();
       const result = await queryBuilder
@@ -34,7 +34,7 @@ export class ClientService {
         .values([{ email: clientData.email, firstName: clientData.firstName, lastName: clientData.lastName }])
         .execute();
       
-      return result.generatedMaps[0] as Client;
+      return true;
     } catch (error) {
       console.error(error);
       throw new Error('Failed to create client.');
@@ -65,7 +65,7 @@ export class ClientService {
   async findAll(): Promise<Client[]> {
     try {
       const queryBuilder = this.dataSource.createQueryBuilder();
-      return await queryBuilder.select(['client.email', 'client.firstName', 'client.lastName']).from(Client, 'client').getMany();
+      return await queryBuilder.select(['client.id', 'client.email', 'client.firstName', 'client.lastName']).from(Client, 'client').getMany();
     } catch (error) {
       console.error(error);
       throw new Error('Failed to find clients.');

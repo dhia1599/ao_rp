@@ -8,13 +8,12 @@ import './assets/fonts/font.css';
 import 'tailwindcss/base.css';
 import 'tailwindcss/components.css';
 import 'tailwindcss/utilities.css';
-import Navbar from './components/navbar';
+
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <Provider store={store}>
     <React.StrictMode>
       <BrowserRouter>
-        <Navbar />
         <App />
       </BrowserRouter>
     </React.StrictMode>
