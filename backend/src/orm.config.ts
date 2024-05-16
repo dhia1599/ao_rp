@@ -1,7 +1,10 @@
-import { DataSource, DataSourceOptions } from 'typeorm';
+import { DataSource, DataSourceOptions, getConnection } from 'typeorm';
 import * as dotenv from 'dotenv';
 import { User } from './entity/user.entity';
 import { CreateUser1678018200391 } from './migration/1678018200391-CreateUser';
+import { Client } from './entity/client.entity';
+import { Invoice } from './entity/invoice.entity';
+import { Product } from './entity/product.entity';
 
 dotenv.config();
 
@@ -13,10 +16,10 @@ const OrmDataSourceOptions: DataSourceOptions = {
   username: process.env.DATABASE_USER,
   password: process.env.DATABASE_PASSWORD,
   synchronize: false,
-  entities: [User],
-  migrations: [CreateUser1678018200391],
-  migrationsTableName: 'migrations',
-  logging: true,
+  entities: [User, Client, Invoice, Product],
+  migrations: ["dist/migrations/*{.ts,.js}"],
+  logging: false,
+  name: 'default'
 };
 
 export const OrmDataSource = new DataSource(OrmDataSourceOptions);
