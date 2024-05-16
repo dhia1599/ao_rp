@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
-import { LoginContainer, LoginContent, LoginFooter, LoginHeader } from '../../components/styled/login';
-import { useTranslation } from 'react-i18next';
 import { useLoginMutation } from '../../services/authApi';
 import { removeToken, setToken } from '../../helpers/jwt';
-import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../../hooks/hook';
 import { signin, signout } from '../../slices/authSlice';
-import Locale from '../../components/locale/Locale';
 
 function Login() {
-  const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
   const [record, setRecord] = useState<Record<string, string | undefined>>({
@@ -33,7 +28,7 @@ function Login() {
       .then((response) => {
         setToken(response.access_token);
         dispatch(signin());
-        navigate('/home');
+        window.location.replace('/home');
       })
       .catch(() => {
         removeToken();
