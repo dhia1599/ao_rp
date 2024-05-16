@@ -15,7 +15,7 @@ function App() {
         <Navbar />
         <div style={{ display: 'flex', flexGrow: 1 }}>
           <Sidebar />
-          <Box sx={{ flexGrow: 1, padding: 2, marginLeft: '4rem' }}>
+          <Box sx={{ flexGrow: 1, marginLeft: '4rem' }}>
             {router}
           </Box>
         </div>

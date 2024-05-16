@@ -8,7 +8,9 @@ export const routes: RouteObject[] = [
   { path: 'login', element: <Login /> },
   {
     element: <PrivateRoute errorElement={<Navigate to="/login" replace />} />,
-    children: [{ path: 'home', element: <Home /> }],
+    children: [
+      { path: 'home', element: <Home /> },
+    ],
   },
   { path: '*', element: <Navigate to="/login" replace /> },
 ];
