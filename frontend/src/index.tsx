@@ -9,12 +9,14 @@ import 'tailwindcss/base.css';
 import 'tailwindcss/components.css';
 import 'tailwindcss/utilities.css';
 import Navbar from './components/navbar';
+import Sidebar from './components/sidebar';
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <Provider store={store}>
     <React.StrictMode>
       <BrowserRouter>
         <Navbar />
+        <Sidebar />
         <App />
       </BrowserRouter>
     </React.StrictMode>
