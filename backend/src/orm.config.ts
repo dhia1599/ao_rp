@@ -1,7 +1,7 @@
 import { DataSource, DataSourceOptions, getConnection } from 'typeorm';
+import { DataSource, DataSourceOptions, getConnection } from 'typeorm';
 import * as dotenv from 'dotenv';
 import { User } from './entity/user.entity';
-import { CreateUser1678018200391 } from './migration/1678018200391-CreateUser';
 import { Client } from './entity/client.entity';
 import { Invoice } from './entity/invoice.entity';
 import { Product } from './entity/product.entity';

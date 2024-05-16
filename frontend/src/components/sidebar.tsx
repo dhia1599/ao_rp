@@ -20,7 +20,7 @@ const Sidebar = () => {
             {isConnected && (
                 <div className="flex flex-col mt-6 items-center space-y-6">
                     <PeopleOutlineIcon className="h-20 w-20 cursor-pointer hover:text-gray-300 transition duration-300" />
-                    <ReceiptIcon className="m-3 h-20 w-20 cursor-pointer hover:text-gray-300 transition duration-300" />
+                    <ReceiptIcon className="h-20 w-20 cursor-pointer hover:text-gray-300 transition duration-300" />
                 </div>
             )}
         </div>
