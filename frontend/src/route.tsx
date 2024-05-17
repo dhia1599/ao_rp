@@ -2,7 +2,7 @@ import { Navigate, RouteObject } from 'react-router-dom';
 import Login from './pages/login/Login';
 import Home from './pages/home/Home';
 import PrivateRoute from './components/route/PrivateRoute';
-import Client from './pages/home/Client';
+import Client from './pages/clients/Client';
 
 export const routes: RouteObject[] = [
   { path: '/', element: <Navigate to="/home" replace /> },

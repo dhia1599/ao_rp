@@ -2,15 +2,21 @@ import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import ReceiptIcon from '@mui/icons-material/Receipt';
 import { useEffect, useState } from 'react';
 import { decode, getToken } from '../helpers/jwt';
+import { useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
     const [isConnected, setIsConnected] = useState(false);
-    
+    const navigate = useNavigate();
+
     useEffect(() => {
         const token = getToken();
         const decodedToken = decode(token);
         setIsConnected(decodedToken !== null);
       }, []);
+
+      const handleNavigate = (path: string) => {
+        navigate(path);
+      };
       
     return (
         <div
@@ -19,7 +25,10 @@ const Sidebar = () => {
         >
             {isConnected && (
                 <div className="flex flex-col mt-6 items-center space-y-6">
-                    <PeopleOutlineIcon className="h-20 w-20 cursor-pointer hover:text-gray-300 transition duration-300" />
+                    <PeopleOutlineIcon
+                        className="h-20 w-20 cursor-pointer hover:text-gray-300 transition duration-300"
+                        onClick={() => handleNavigate('/clients')}
+                    />
                     <ReceiptIcon className="h-20 w-20 cursor-pointer hover:text-gray-300 transition duration-300" />
                 </div>
             )}
