@@ -12,4 +12,14 @@ export const getAllInvoices = async () =>{
   return response;
 }
 
+export const getInvoiceById = async (id : string | undefined) =>{
+  const response = await axios.get(urlBase + '/invoices/' + id);
+  return response;
+}
+
+export const getProductsByInvoiceId = async (id : string | undefined) =>{
+  const response = await axios.get(urlBase + '/products/with-invoice/' + id);
+  return response;
+}
+
 

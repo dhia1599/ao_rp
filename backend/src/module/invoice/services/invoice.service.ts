@@ -13,7 +13,12 @@ export class InvoiceService {
   async findOneById(id: number): Promise<Invoice | undefined> {
     try {
       const queryBuilder = this.dataSource.createQueryBuilder();
-      const invoice = await queryBuilder.select(['invoice.price', 'invoice.contact', 'invoice.client']).from(Invoice, 'invoice').where('invoice.id = :id', { id }).getOne();
+      const invoice = await queryBuilder.select(['invoice.id', 'invoice.price', 'invoice.contact', 'client.firstName', 'client.lastName', 'client.email', 'client.phone'])
+      .from(Invoice, 'invoice')
+      .leftJoin('invoice.client', 'client')
+      .where('invoice.id = :id', { id })
+      .getOne();            
+      
       if (!invoice) {
         throw new NotFoundException('invoice not found.');
       }

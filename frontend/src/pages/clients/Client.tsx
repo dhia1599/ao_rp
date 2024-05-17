@@ -32,7 +32,7 @@ function Client() {
   return (
     <div className="flex justify-center">
       <div className="w-4/5 bg-[#6bb5ce] rounded-lg p-6">
-        <h1 className="text-2xl font-bold mb-4 text-black">Clients list</h1>
+        <h1 className="text-2xl font-bold mb-4 text-black">Client list</h1>
         {clients?.map((client) => (
           <ClientItem
             key={client.id}
