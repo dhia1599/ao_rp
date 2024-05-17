@@ -13,7 +13,7 @@ export class ClientService {
   async findOneById(id: number): Promise<Client | undefined> {
     try {
       const queryBuilder = this.dataSource.createQueryBuilder();
-      const client = await queryBuilder.select(['client.email', 'client.firstName', 'client.lastName']).from(Client, 'client').where('client.id = :id', { id }).getOne();
+      const client = await queryBuilder.select(['client.email', 'client.firstName', 'client.lastName', 'client.phone']).from(Client, 'client').where('client.id = :id', { id }).getOne();
       if (!client) {
         throw new NotFoundException('Client not found.');
       }
@@ -31,7 +31,7 @@ export class ClientService {
       const result = await queryBuilder
         .insert()
         .into(Client)
-        .values([{ email: clientData.email, firstName: clientData.firstName, lastName: clientData.lastName }])
+        .values([{ email: clientData.email, firstName: clientData.firstName, lastName: clientData.lastName, phone: clientData.phone }])
         .execute();
       
       return true;
@@ -65,7 +65,7 @@ export class ClientService {
   async findAll(): Promise<Client[]> {
     try {
       const queryBuilder = this.dataSource.createQueryBuilder();
-      return await queryBuilder.select(['client.id', 'client.email', 'client.firstName', 'client.lastName']).from(Client, 'client').getMany();
+      return await queryBuilder.select(['client.id', 'client.email', 'client.firstName', 'client.lastName', 'client.phone']).from(Client, 'client').getMany();
     } catch (error) {
       console.error(error);
       throw new Error('Failed to find clients.');
