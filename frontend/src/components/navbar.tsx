@@ -3,15 +3,21 @@ import logo from '../assets/img/logo.png';
 import { getToken, decode } from '../helpers/jwt';
 import SearchIcon from '@mui/icons-material/Search';
 import LogoutButton from './logout-button';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isConnected, setIsConnected] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const token = getToken();
     const decodedToken = decode(token);
     setIsConnected(decodedToken !== null);
   }, []);
+
+  const handleNavigate = (path: string) => {
+    navigate(path);
+  };
 
   return (
     <nav
@@ -21,7 +27,12 @@ const Navbar = () => {
       <div className="sm:px-3 w-full">
         <div className="relative flex items-center justify-between h-16">
           <div className="flex items-center">
-            <img className="h-12 w-auto" src={logo} alt="Logo" />
+            <img 
+              className="h-12 w-auto" 
+              src={logo} 
+              alt="Logo" 
+              onClick={() => handleNavigate('/home')}
+            />
           </div>
           {isConnected && (
             <div className="flex items-center justify-between w-full">
