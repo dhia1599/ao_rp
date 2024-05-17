@@ -15,7 +15,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className="sticky top-0 w-full"
+      className="sticky top-0 w-full mb-4"
       style={{ background: 'linear-gradient(to right, #6bb5ce, #5e87c6, #493488)' }}
     >
       <div className="sm:px-3 w-full">

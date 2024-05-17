@@ -20,7 +20,7 @@ const Sidebar = () => {
       
     return (
         <div
-        className="fixed top-16 left-0 h-full w-16 flex flex-col items-center"
+        className="fixed top-16 left-0 h-full w-16 flex flex-col items-center mr-4"
         style={{ background: 'linear-gradient(to bottom, #6bb5ce, #5e87c6, #493488)' }}
         >
             {isConnected && (
