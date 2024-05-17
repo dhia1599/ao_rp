@@ -29,7 +29,10 @@ const Sidebar = () => {
                         className="h-20 w-20 cursor-pointer hover:text-gray-300 transition duration-300"
                         onClick={() => handleNavigate('/clients')}
                     />
-                    <ReceiptIcon className="h-20 w-20 cursor-pointer hover:text-gray-300 transition duration-300" />
+                    <ReceiptIcon
+                        className="h-20 w-20 cursor-pointer hover:text-gray-300 transition duration-300"
+                        onClick={() => handleNavigate('/invoices')}
+                    />
                 </div>
             )}
         </div>

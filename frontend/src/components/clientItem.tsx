@@ -23,6 +23,7 @@ const ClientItem: React.FC<ClientItemProps> = ({ client, backgroundColor }) => {
         <MailOutlineIcon />
         <p className="text-black">{client.email}</p>
         <PhoneIcon />
+        <p className="text-black">{client.phone}</p>
       </div>
     </div>
   );
